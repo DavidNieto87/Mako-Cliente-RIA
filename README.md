@@ -36,16 +36,16 @@ Lista de Tareas que se llevan acabo para la generación de imagen cliente de Mak
 
 		- Edita la última linea del archivo, en donde aparece " enabled=1 "se cambia a"enabled=0". Guardar y cerrar el 			  archivo.
 
-**************************************************************************
+#**************************************************************************
 
 # set this to 0 to disable apport, or to 1 to enable it
 # you can temporarily override this with
 # sudo service apport start force_start=1
 enabled=0
 
-**************************************************************************
+#**************************************************************************
 
-	- A continuación, introducir el siguiente comando para detener el servicio apport:
+		- A continuación, introducir el siguiente comando para detener el servicio apport:
 
 		- sudo service apport stop
 
