@@ -36,14 +36,12 @@ Lista de Tareas que se llevan acabo para la generación de imagen cliente de Mak
 
 		- Edita la última linea del archivo, en donde aparece " enabled=1 "se cambia a"enabled=0". Guardar y cerrar el 			  archivo.
 
-#**************************************************************************
-
-# set this to 0 to disable apport, or to 1 to enable it
-# you can temporarily override this with
-# sudo service apport start force_start=1
+**************************************************************************
+set this to 0 to disable apport, or to 1 to enable it
+you can temporarily override this with
+sudo service apport start force_start=1
 enabled=0
-
-#**************************************************************************
+**************************************************************************
 
 		- A continuación, introducir el siguiente comando para detener el servicio apport:
 
@@ -179,9 +177,6 @@ apt-get install flashplugin-installer ubuntu-restricted-extras gstreamer0.10-plu
 
 		http://wiki.ocsinventory-ng.org/index.php/Documentation:UnixAgent
 
-************************************************************************************************************
-************************************************************************************************************
-
 
 		- Se instala Visual Studio Code.
 
@@ -201,7 +196,6 @@ apt-get install flashplugin-installer ubuntu-restricted-extras gstreamer0.10-plu
 			- Crear el acceso directo para no tener que ejecutar siempre la expresión ./Code
 			- En un archivo de texto agregamos las siguientes lineas:
 
-***************************************************************************************
 
 [Desktop Entry]
 Name=Visual Studio Code
@@ -213,16 +207,12 @@ Type=Application
 StartupNotify=true
 Categories=GTK;GNOME;Development;WebDevelopment;
 
-***************************************************************************************
 		
 			- Guardamos el archivo con el nombre VisualStudioCode.desktop en la ruta /usr/share/applications/
 			- vim /usr/share/applications/VisualStudioCode.desktop
 			- Si todo sale correcto el programa aparecerá en el apartado "Programación" del menu "Aplicaciones" y se abrirá de forma correcta.
 
 		https://geekytheory.com/como-instalar-visual-studio-code-en-ubuntu-linux-y-derivadas/
-
-************************************************************************************************************
-************************************************************************************************************
 
 
 		- Se instala Scratch 2
@@ -275,7 +265,7 @@ http://programamos.es/instalacion-de-scratch2-offline-en-debianubuntu/
 			- Crear el acceso directo:
 			- En un archivo de texto agregamos las siguientes lineas:
 
-***************************************************************************************
+
 
 #!/usr/bin/env xdg-open
 [Desktop Entry]
@@ -291,7 +281,7 @@ Categories=Application;Education;Development;ComputerScience;
 MimeType=application/x-scratch-project
 Name[es_MX]=Scratch 2
 
-***************************************************************************************
+
 		
 			- Guardamos el archivo con el nombre scratch.desktop en la ruta /usr/share/applications/
 			- vim /usr/share/applications/scratch.desktop
@@ -300,8 +290,6 @@ Name[es_MX]=Scratch 2
 			  el idioma a español de Scratch 2.
 
 
-************************************************************************************************************
-************************************************************************************************************
 
 	- Paquetes a instalar mediante repositorios:
 
@@ -341,13 +329,13 @@ Name[es_MX]=Scratch 2
 	* vim /etc/ssh/sshd_config editar y dejar igual:
 
 ************************************************************************************************************
-# What ports, IPs and protocols we listen for
+#What ports, IPs and protocols we listen for
 Port 22
-# Use these options to restrict which interfaces/protocols sshd will bind to
+#Use these options to restrict which interfaces/protocols sshd will bind to
 #ListenAddress ::
 #ListenAddress 0.0.0.0
 Protocol 2
-# HostKeys for protocol version 2
+#HostKeys for protocol version 2
 HostKey /etc/ssh/ssh_host_rsa_key
 HostKey /etc/ssh/ssh_host_dsa_key
 HostKey /etc/ssh/ssh_host_ecdsa_key
@@ -355,15 +343,15 @@ HostKey /etc/ssh/ssh_host_ed25519_key
 #Privilege Separation is turned on for security
 UsePrivilegeSeparation yes
 
-# Lifetime and size of ephemeral version 1 server key
+#Lifetime and size of ephemeral version 1 server key
 KeyRegenerationInterval 3600
 ServerKeyBits 1024
 
-# Logging
+#Logging
 SyslogFacility AUTH
 LogLevel INFO
 
-# Authentication:
+#Authentication:
 LoginGraceTime 120
 PermitRootLogin yes
 StrictModes yes
@@ -372,32 +360,32 @@ RSAAuthentication yes
 PubkeyAuthentication yes
 #AuthorizedKeysFile	%h/.ssh/authorized_keys
 
-# Don't read the user's ~/.rhosts and ~/.shosts files
+#Don't read the user's ~/.rhosts and ~/.shosts files
 IgnoreRhosts yes
-# For this to work you will also need host keys in /etc/ssh_known_hosts
+#For this to work you will also need host keys in /etc/ssh_known_hosts
 RhostsRSAAuthentication no
-# similar for protocol version 2
+#similar for protocol version 2
 HostbasedAuthentication no
-# Uncomment if you don't trust ~/.ssh/known_hosts for RhostsRSAAuthentication
+#Uncomment if you don't trust ~/.ssh/known_hosts for RhostsRSAAuthentication
 #IgnoreUserKnownHosts yes
 
-# To enable empty passwords, change to yes (NOT RECOMMENDED)
+#To enable empty passwords, change to yes (NOT RECOMMENDED)
 PermitEmptyPasswords no
 
-# Change to yes to enable challenge-response passwords (beware issues with
+#Change to yes to enable challenge-response passwords (beware issues with
 # some PAM modules and threads)
 ChallengeResponseAuthentication no
 
-# Change to no to disable tunnelled clear text passwords
+#Change to no to disable tunnelled clear text passwords
 #PasswordAuthentication yes
 
-# Kerberos options
+#Kerberos options
 #KerberosAuthentication no
 #KerberosGetAFSToken no
 #KerberosOrLocalPasswd yes
 #KerberosTicketCleanup yes
 
-# GSSAPI options
+#GSSAPI options
 #GSSAPIAuthentication no
 #GSSAPICleanupCredentials yes
 
@@ -411,20 +399,20 @@ TCPKeepAlive yes
 #MaxStartups 10:30:60
 #Banner /etc/issue.net
 
-# Allow client to pass locale environment variables
+#Allow client to pass locale environment variables
 AcceptEnv LANG LC_*
 
 Subsystem sftp /usr/lib/openssh/sftp-server
 
-# Set this to 'yes' to enable PAM authentication, account processing,
-# and session processing. If this is enabled, PAM authentication will
-# be allowed through the ChallengeResponseAuthentication and
-# PasswordAuthentication.  Depending on your PAM configuration,
-# PAM authentication via ChallengeResponseAuthentication may bypass
-# the setting of "PermitRootLogin without-password".
-# If you just want the PAM account and session checks to run without
-# PAM authentication, then enable this but set PasswordAuthentication
-# and ChallengeResponseAuthentication to 'no'.
+#Set this to 'yes' to enable PAM authentication, account processing,
+#and session processing. If this is enabled, PAM authentication will
+#be allowed through the ChallengeResponseAuthentication and
+#PasswordAuthentication.  Depending on your PAM configuration,
+#PAM authentication via ChallengeResponseAuthentication may bypass
+#the setting of "PermitRootLogin without-password".
+#If you just want the PAM account and session checks to run without
+#PAM authentication, then enable this but set PasswordAuthentication
+#and ChallengeResponseAuthentication to 'no'.
 UsePAM yes
 
 ************************************************************************************************************
@@ -566,7 +554,7 @@ http://erroresysoluciones.blogspot.mx/2011/10/ver-las-unidades-montadas-en-el.ht
 ************************************************************************************************************
 ************************************************************************************************************
 
-# interfaces(5) file used by ifup(8) and ifdown(8)
+#interfaces(5) file used by ifup(8) and ifdown(8)
 auto lo
 iface lo inet loopback
 
@@ -860,20 +848,20 @@ Policy definitions for ConsoleKit
 ************************************************************************************************************
 
 #
-# Min/max values for automatic uid selection in useradd
+#Min/max values for automatic uid selection in useradd
 #
 UID_MIN                  1000
 UID_MAX                  6000
-# System accounts
+#System accounts
 #SYS_UID_MIN              100
 #SYS_UID_MAX              999
 
 #
-# Min/max values for automatic gid selection in groupadd
+#Min/max values for automatic gid selection in groupadd
 #
 GID_MIN                  1000
 GID_MAX                  6000
-# System accounts
+#System accounts
 #SYS_GID_MIN              100
 #SYS_GID_MAX              999
 
@@ -1510,16 +1498,16 @@ exit 0
 ************************************************************************************************************
 #!/bin/sh -e
 #
-# rc.local
+#rc.local
 #
-# This script is executed at the end of each multiuser runlevel.
-# Make sure that the script will "exit 0" on success or any other
-# value on error.
+#This script is executed at the end of each multiuser runlevel.
+#Make sure that the script will "exit 0" on success or any other
+#value on error.
 #
-# In order to enable or disable this script just change the execution
-# bits.
+#In order to enable or disable this script just change the execution
+#bits.
 #
-# By default this script does nothing.
+#By default this script does nothing.
 
 #Inicializa el proceso para cambio de Wallpaper Automatico
 #Monta la carpeta compartida del repo
@@ -1574,8 +1562,8 @@ https://windtux.com/solventando-el-error-la-suma-hash-difiere-al-buscar-actualiz
 ************************************************************************************************************
 ************************************************************************************************************
 
-# Which protocols will we use to discover printers on the network?
-# Can use DNSSD and/or CUPS, or 'none' for neither.
+#Which protocols will we use to discover printers on the network?
+#Can use DNSSD and/or CUPS, or 'none' for neither.
 BrowseRemoteProtocols none
 
 ************************************************************************************************************
@@ -1645,17 +1633,16 @@ reinicio ALL = (root) NOPASSWD: /sbin/reboot
 ************************************************************************************************************
 ************************************************************************************************************
 
-# ~/.profile: executed by the command interpreter for login shells.
-# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
-# exists.
-# see /usr/share/doc/bash/examples/startup-files for examples.
-# the files are located in the bash-doc package.
-
-# the default umask is set in /etc/profile; for setting the umask
-# for ssh logins, install and configure the libpam-umask package.
+#~/.profile: executed by the command interpreter for login shells.
+#This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
+#exists.
+#see /usr/share/doc/bash/examples/startup-files for examples.
+#the files are located in the bash-doc package.
+#the default umask is set in /etc/profile; for setting the umask
+#for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-# if running bash
+#if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
@@ -1663,12 +1650,12 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-# set PATH so it includes user's private bin if it exists
+#set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-# usuario REINICIO
+#usuario REINICIO
 if [ $USER = "reinicio" ]; then
 sudo reboot
 fi
