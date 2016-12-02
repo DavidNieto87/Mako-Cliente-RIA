@@ -1,7 +1,19 @@
-# Mako-Cliente-RIA
+Cliente Mako RIA bajo la platforma Ubuntu 14.04.x 64 bits
 
-## Configuración de Ubuntu 14.04 64 bits para trabajar con Mako.
+Introducción:
 
+En este proyecto se describen los pasos a seguir para la creación de una imagen cliente MAKO, esto a partir de una instalación en limpio del sistema operativo Ubuntu 14.04.x LTS en su version para 64 bits. Este proceso se llevará acabo en las PCs Optiplex 360 de Fase 1 de RIA, debido a que son los equipos con más antiguedad en el proyecto y por ende los que cuentan con menos recursos de hardware, todas las pruebas se realizaran en todos los diferentes equipos de RIA.
+
+Objetivos:
+
+ - Realizar una imagen totalmente funcional con las aplicaciones necesarias para los socios.
+ - Permitir que la PC cliente se comunique satisfactoriamente con los servidores LDAP, MAKO, NET, FW.
+ - Implementar las ultimas versiones de los navegadores web para resolver problemas con la visualización de los cursos.
+ - Definir una estructura de imagenes cliente totalmete estandar para todos los proyectos.
+ - Implementar los ultimos cambios de software realizados en producción.
+
+
+Proceso de creación:
 
 Lista de Tareas que se llevan acabo para la generación de imagen cliente de Mako en el proyecto RIA.
 
